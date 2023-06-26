@@ -11,3 +11,394 @@ Template: astra
 */
 
 
+
+
+/* HEADER */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bouton-background-nav {
+  height: 100%;
+  background-color: #DC9F96;
+}
+#menu-item-22{
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 0 20px;
+  order: 1;
+}
+#menu-item-21{
+  order: 2;
+}
+
+/* section canettes*/
+.titre-bloc-canette{
+  width: 65%;
+}
+
+.border-block-background {
+  border-bottom-left-radius: 20% 5%;
+  border-bottom-right-radius: 20% 5%;
+}
+
+/*section card fruit*/
+.block-card-fruit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  gap: 10px;
+}
+.block-card-fruit .card-fruit {
+  width: 45% !important;
+  margin: 0;
+}
+
+/* section avis */
+.bloc-avis {
+  padding: 0;
+  padding-top: 30px;
+}
+.bloc-client {
+  width: 100%
+}
+.block-texte-avis {
+  line-height: normal;
+}
+
+/* PAGE NOUS CONTACTER*/
+
+/* bloc nous rencontrer*/
+.image-bloc-rencontrer{
+  width: 70% !important;
+}
+.titre-rencontrer {
+  padding-top: 60px;
+  font-weight: 800;
+}
+.texte-rencontrer {
+  width: 50%;
+  font-size: 20px;
+}
+
+/*bloc equipe*/
+.bloc-colonne-equipe {
+  padding-right: 20px;
+  position: relative;
+}
+.colonne-equipe {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.image-plante-equipe {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* couleur fond image canette*/
+.background-color-canette {
+  background: #ECE2DA;
+}
+/* bloc formulaire de contact */
+.section-nous-contacter {
+  position: relative;
+  z-index: 1;
+}
+.image-formulaire-contact {
+  position: absolute;
+  bottom: 130px;
+  left: 32%;
+  z-index: -1;
+}
+.bouton-formulaire-envoyer {
+  font-size: 15px;
+  font-weight: 400;
+}
+.label-titre-contact {
+  font-size: 20px;
+  font-weight: 400;
+}
+/* bloc formulaire de commande */
+.titre-section-page {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.fluentform .label-titre .ff-el-input--label label {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+.container-infos-commande{
+  margin-bottom: 20px;
+}
+.container-infos-commande div.ff-t-column-1 {
+  padding-right: 40px;
+}
+.container-infos-commande div.ff-t-column-2 {
+  padding-left: 49px;
+  border-left: 1px solid white;
+}
+.frm-fluent-form .container-produit-commande div.ff-t-cell {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.imput-champs .bouton-champs-qte {
+  width: 30%;
+  border-radius: 10px 0 0 10px;
+  height: 56px;
+  padding: 10px 20px;
+}
+.bouton-quantite p {
+  width: 31px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+}
+.bouton-quantite p a {
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 0 5px 0 0;
+}
+.bouton-ok p a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 10px;
+  width: 100px !important;
+  height: 56px;
+}
+.photo-produit {
+  width: 100% !important;
+  height: auto !important;
+}
+img.aligncenter {
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 544px) {
+  .p {
+    font-size: 15px !important;
+  }
+  .entry-content h2 {
+    font-size: 20px !important;
+  }
+  .titre-bloc-canette{
+    width: 100% !important;
+  }
+  .groupe-card-fruit {
+    padding: 30px 10px;
+  }
+  .block-card-fruit {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    width: 100%;
+  }
+  .block-card-fruit .card-fruit {
+    width: 100% !important;
+   padding: 10px !important;
+  }
+  .wp-block-cover__inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .texte-card-fruit {
+    font-size: 25px !important;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+    margin-bottom: 0 !important;
+  }
+  .bouton-commander-card-fruit {
+    min-width: 50%;
+  }
+  .colonne-photo-client {
+    display: flex;
+  }
+  .prenom-client {
+    font-size: 30px !important;
+  }
+  .block-texte-avis {
+    font-size: 16px !important;
+  }
+  .bloc-nous-rencontrer {
+    padding: 30px 15px;
+  }
+  .image-plante-equipe {
+    right: -50px !important;
+  }
+  .image-plante-equipe img {
+    width: 55% !important;
+  }
+  .image-formulaire-contact {
+    left: 7% !important;
+  }
+  #photo-avis-client .photo-avis-client {
+    margin: 0;
+  }
+  .texte-rencontrer {
+    width: 70%;
+    font-size: 16px !important;
+  }
+  .has-medium-font-size {
+    font-size: 16px !important;
+  }
+  .label-titre-contact {
+    font-size: 16px;
+  }
+  .container-produit-commande {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  .photo-produit {
+    margin: 0 !important;
+  }
+  .bloc-fourmulaire-commande {
+    padding: 20px;
+  }
+  .container-infos-commande {
+    flex-direction: column !important;
+    margin-bottom: 30px !important;
+    gap: 30px;
+  }
+  .container-infos-commande div.ff-t-column-1{
+    padding:10px !important;
+  }
+  .container-infos-commande div.ff-t-column-2{
+    padding: 10px !important;
+    border: none;
+  }
+  .titre-section-page {
+    margin: 0 !important;
+    text-decoration: underline white 1px;
+
+  }
+  .fluentform .label-titre .ff-el-input--label label {
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+  }
+}
+
+
+
+@media only screen and (max-width: 921px) {
+
+  h2 {
+    font-size: 28px !important;
+  }
+
+  /*PAGE ACCUEIL*/
+
+  .titre-bloc-canette{
+    width: 80%;
+  }
+  .bloc-client {
+    flex-direction: column;
+  }
+  .bloc-client-individuel {
+    padding-bottom: 50px !important;
+  }
+  .espacement-bloc-client {
+    height: 20px !important;
+  }
+  .photo-avis-client {
+    float: left !important;
+    margin: 0 !important;
+  }
+  .block-card-fruit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .block-card-fruit .card-fruit {
+    width: 80% !important;
+    margin: 10px !important;
+  }
+  .texte-card-fruit {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px !important;
+  }
+  .colonne-photo-client{
+    flex-basis: 20% !important;
+  }
+  .photo-texte-client{
+    justify-content: center;
+  }
+
+
+  /*PAGE NOUS RENCONTRER*/
+  
+  .groupe-equipe {
+    padding: 0 50px 50px 50px !important;
+  }
+  .colonne-equipe1 {
+    flex-direction: column;
+    padding: 50px !important;
+  }
+  .image-plante-equipe {
+    right: 10px;
+  }
+  .image-plante-equipe img {
+    width: 80%;
+  }
+  .image-formulaire-contact {
+    left: 25%;
+  }
+
+  /*PAGE COMMANDE*/
+  .container-produit-commande {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .frm-fluent-form .container-produit-commande div.ff-t-cell {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 45% !important;
+    flex-grow: initial;
+  }
+  .container-infos-commande {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .container-infos-commande div.ff-t-cell {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .container-infos-commande div.ff-t-column-2 {
+    padding-left: 50px;
+  }
+
+  .titre-section-page {
+    font-size: 20px !important;
+  }
+
+}

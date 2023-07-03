@@ -195,6 +195,9 @@ img.aligncenter {
   .titre-bloc-canette{
     width: 100% !important;
   }
+  .container-gouts{
+    padding:  10 px 10px !important;
+  }
   .groupe-card-fruit {
     padding: 30px 10px;
   }
@@ -214,17 +217,19 @@ img.aligncenter {
     justify-content: center;
   }
   .texte-card-fruit {
-    font-size: 25px !important;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    width: 50%;
+    font-size: 20px !important;
     display: flex;
     align-items: center;
-    justify-content: inherit;
+    justify-content: center;
     margin-bottom: 0 !important;
+    word-wrap: anywhere;
   }
+ 
   .bouton-commander-card-fruit {
     min-width: 50%;
+  }
+  .bloc-avis{
+    padding-top: 0 !important;
   }
   .colonne-photo-client {
     display: flex;
@@ -330,14 +335,15 @@ img.aligncenter {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    width: 100%;
   }
   .block-card-fruit .card-fruit {
-    width: 80% !important;
+    width: 95% !important;
     margin: 10px !important;
   }
   .texte-card-fruit {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
     font-size: 30px !important;
   }
   .colonne-photo-client{

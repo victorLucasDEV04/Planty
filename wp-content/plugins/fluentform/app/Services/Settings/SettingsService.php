@@ -13,7 +13,7 @@ class SettingsService
     {
         $metaKey = sanitize_text_field(Arr::get($attributes, 'meta_key'));
 
-        $formId = intval(Arr::get($attributes, 'form_id'));
+        $formId = (int) Arr::get($attributes, 'form_id');
 
         $result = FormMeta::where(['meta_key' => $metaKey, 'form_id' => $formId])->get();
 
@@ -45,9 +45,7 @@ class SettingsService
             'Use fluentform/get_meta_key_settings_response instead of fluentform_get_meta_key_settings_response'
         );
 
-        $result = apply_filters('fluentform/get_meta_key_settings_response', $result, $formId, $metaKey);
-
-        return $result;
+        return apply_filters('fluentform/get_meta_key_settings_response', $result, $formId, $metaKey);
     }
 
     public function general($formId)
@@ -75,7 +73,7 @@ class SettingsService
 
     public function saveGeneral($attributes = [])
     {
-        $formId = intval(Arr::get($attributes, 'form_id'));
+        $formId = (int) Arr::get($attributes, 'form_id');
 
         $formSettings = json_decode(Arr::get($attributes, 'formSettings'), true);
 
@@ -164,11 +162,10 @@ class SettingsService
             'replyTo'                    => 'sanitize_text_field',
             'bcc'                        => 'sanitize_text_field',
             'subject'                    => 'sanitize_text_field',
-            'message'                    => 'wp_kses_post',
+            'message'                    => 'fluentform_sanitize_html',
             'url'                        => 'sanitize_url',
             'webhook'                    => 'sanitize_url',
             'textTitle'                  => 'sanitize_text_field',
-
         ];
 
         return fluentform_backend_sanitizer($settings, $sanitizerMap);
@@ -176,7 +173,7 @@ class SettingsService
 
     public function store($attributes = [])
     {
-        $formId = intval(Arr::get($attributes, 'form_id'));
+        $formId = (int) Arr::get($attributes, 'form_id');
 
         $value = Arr::get($attributes, 'value', '');
 
@@ -210,15 +207,16 @@ class SettingsService
         // If the request has an valid id field it's safe to assume
         // that the user wants to update an existing settings.
         // So, we'll proceed to do so by finding it first.
-        $id = intval(Arr::get($attributes, 'meta_id'));
+        $id = (int) Arr::get($attributes, 'meta_id');
 
         $settingsQuery = FormMeta::where('form_id', $formId);
 
+        $settings = null;
         if ($id) {
             $settings = $settingsQuery->find($id);
         }
 
-        if (isset($settings)) {
+        if (!empty($settings)) {
             $settingsQuery->where('id', $settings->id)->update($data);
             $insertId = $settings->id;
         } else {

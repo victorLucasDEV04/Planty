@@ -30,10 +30,11 @@ add_action('shutdown', function () {
     while (@ob_end_flush());
 });
 
-// Update your custom tablet breakpoint below - like return 921;
+// Mise à jour point breakpoint personnalisé tablette - retour 921;
 add_filter('astra_tablet_breakpoint', function () {
     return 921;
 });
+
 
 
 

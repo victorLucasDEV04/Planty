@@ -281,9 +281,7 @@ $app->addFilter('fluentform/response_render_input_number', function ($response, 
 }, 10, 4);
 
 
-add_filter('wpf_integrations', function($integrations) {
-    if (is_array($integrations) && isset($integrations['fluent-forms'])) {
-        $integrations['fluent-forms'] = 'FluentForm\Framework\Foundation\Application';
-    }
-    return $integrations;
-});
+/*
+ * Remove this after WP Fusion Update their plugin
+ */
+add_filter('fluentform/is_integration_enabled_wpfusion', '__return_true');

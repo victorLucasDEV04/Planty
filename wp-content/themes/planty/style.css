@@ -23,17 +23,9 @@ Template: astra
   height: 100%;
   background-color: #DC9F96;
 }
-#menu-item-22{
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  padding: 0 20px;
-  order: 1;
-}
 #menu-item-21{
   order: 2;
 }
-
 /* section canettes*/
 .titre-bloc-canette{
   width: 65%;
@@ -43,7 +35,6 @@ Template: astra
   border-bottom-left-radius: 20% 5%;
   border-bottom-right-radius: 20% 5%;
 }
-
 /*section card fruit*/
 .block-card-fruit {
   display: flex;
@@ -57,7 +48,6 @@ Template: astra
   width: 45% !important;
   margin: 0;
 }
-
 /* section avis */
 .bloc-avis {
   padding: 0;
@@ -71,7 +61,6 @@ Template: astra
 }
 
 /* PAGE NOUS CONTACTER*/
-
 /* bloc nous rencontrer*/
 .image-bloc-rencontrer{
   width: 70% !important;
@@ -84,7 +73,6 @@ Template: astra
   width: 50%;
   font-size: 20px;
 }
-
 /*bloc equipe*/
 .bloc-colonne-equipe {
   padding-right: 20px;
@@ -101,7 +89,6 @@ Template: astra
   bottom: 0;
   z-index: -1;
 }
-
 /* couleur fond image canette*/
 .background-color-canette {
   background: #ECE2DA;
@@ -192,11 +179,12 @@ img.aligncenter {
   .entry-content h2 {
     font-size: 20px !important;
   }
+  /*PAGE ACCUEIL*/
   .titre-bloc-canette{
     width: 100% !important;
   }
   .container-gouts{
-    padding:  10 px 10px !important;
+    padding: 10px 10px !important;
   }
   .groupe-card-fruit {
     padding: 30px 10px;
@@ -224,7 +212,6 @@ img.aligncenter {
     margin-bottom: 0 !important;
     word-wrap: anywhere;
   }
- 
   .bouton-commander-card-fruit {
     min-width: 50%;
   }
@@ -240,8 +227,12 @@ img.aligncenter {
   .block-texte-avis {
     font-size: 16px !important;
   }
+  /*PAGE NOUS RENCONTRER*/
   .bloc-nous-rencontrer {
     padding: 30px 15px;
+  }
+  .image-bloc-rencontrer img{
+    max-width: 40%;
   }
   .image-plante-equipe {
     right: -50px !important;
@@ -265,6 +256,7 @@ img.aligncenter {
   .label-titre-contact {
     font-size: 16px;
   }
+  /*PAGE COMMANDER*/
   .container-produit-commande {
     display: flex;
     flex-direction: column !important;
@@ -304,15 +296,12 @@ img.aligncenter {
 }
 
 
-
 @media only screen and (max-width: 921px) {
 
   h2 {
     font-size: 28px !important;
   }
-
   /*PAGE ACCUEIL*/
-
   .titre-bloc-canette{
     width: 80%;
   }
@@ -352,10 +341,7 @@ img.aligncenter {
   .photo-texte-client{
     justify-content: center;
   }
-
-
   /*PAGE NOUS RENCONTRER*/
-  
   .groupe-equipe {
     padding: 0 50px 50px 50px !important;
   }
@@ -372,8 +358,7 @@ img.aligncenter {
   .image-formulaire-contact {
     left: 25%;
   }
-
-  /*PAGE COMMANDE*/
+  /*PAGE COMMANDER*/
   .container-produit-commande {
     display: flex;
     flex-direction: row;
@@ -406,5 +391,4 @@ img.aligncenter {
   .titre-section-page {
     font-size: 20px !important;
   }
-
 }

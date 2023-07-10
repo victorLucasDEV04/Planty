@@ -17,7 +17,6 @@ define('CHILD_THEME_PLANTY_VERSION', '1.0.0');
  */
 function child_enqueue_styles()
 {
-
     wp_enqueue_style('planty-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_PLANTY_VERSION, 'all');
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
@@ -30,6 +29,7 @@ add_action('shutdown', function () {
     while (@ob_end_flush());
 });
 
+
 // Mise à jour point breakpoint personnalisé tablette - retour 921;
 add_filter('astra_tablet_breakpoint', function () {
     return 921;
@@ -39,8 +39,6 @@ add_filter('astra_tablet_breakpoint', function () {
 
 
 /* lien admin menu*/
-
-
 function is_user_logged($items, $args)
 {
 

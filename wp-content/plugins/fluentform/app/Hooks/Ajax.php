@@ -11,15 +11,14 @@ use FluentForm\App\Modules\Acl\Acl;
  *
  * @var $app \FluentForm\Framework\Foundation\Application
  */
-$app->addAction('wp_ajax_nopriv_fluentform_submit', function () use ($app) {
-//    (new \FluentForm\App\Modules\Form\FormHandler($app))->onSubmit();
-    (new \FluentForm\App\Http\Controllers\SubmissionHandlerController())->submit();
 
+$app->addAction('wp_ajax_nopriv_fluentform_submit', function () use ($app) {
+    (new \FluentForm\App\Modules\SubmissionHandler\SubmissionHandler($app))->submit();
 });
 
 $app->addAction('wp_ajax_fluentform_submit', function () use ($app) {
-//    (new \FluentForm\App\Modules\Form\FormHandler($app))->onSubmit();
-    (new \FluentForm\App\Http\Controllers\SubmissionHandlerController())->submit();
+    //    (new \FluentForm\App\Modules\Form\FormHandler($app))->onSubmit();
+    (new \FluentForm\App\Modules\SubmissionHandler\SubmissionHandler($app))->submit();
 });
 
 /*
@@ -252,7 +251,7 @@ $app->addAction('wp_ajax_fluentform-form-report', function () use ($app) {
 
 $app->addAction('wp_ajax_fluentform-form-entries-export', function () use ($app) {
     Acl::verify('fluentform_entries_viewer');
-    (new \FluentForm\App\Http\Controllers\TransferController)->exportEntries();
+    (new \FluentForm\App\Modules\Transfer\Transfer())->exportEntries();
 });
 
 $app->addAction('wp_ajax_fluentform-get-entry', function () {
@@ -410,13 +409,13 @@ $app->addAction('wp_ajax_fluentform_install_fluentsmtp', function () {
 // Export forms
 $app->addAction('wp_ajax_fluentform-export-forms', function () use ($app) {
     Acl::verify('fluentform_settings_manager');
-    (new \FluentForm\App\Http\Controllers\TransferController)->exportForms();
+    (new \FluentForm\App\Modules\Transfer\Transfer())->exportForms();
 });
 
 // Import forms
 $app->addAction('wp_ajax_fluentform-import-forms', function () use ($app) {
     Acl::verify('fluentform_settings_manager');
-    (new \FluentForm\App\Http\Controllers\TransferController)->importForms();
+    (new \FluentForm\App\Modules\Transfer\Transfer())->importForms();
 });
 
 $app->addAction('wp_ajax_fluentform-get-all-forms', function () use ($app) {
@@ -549,4 +548,19 @@ $app->addAction('wp_ajax_fluentform_background_process', function () {
 
 $app->addAction('wp_ajax_nopriv_fluentform_background_process', function () {
     $this->app['fluentFormAsyncRequest']->handleBackgroundCall();
+});
+
+/*
+ * For REST API Nonce Renewal
+ */
+$app->addAction('wp_ajax_fluentform_renew_rest_nonce', function () {
+    if (!Acl::getCurrentUserPermissions()) {
+        wp_send_json([
+            'error' => 'You do not have permission to do this',
+        ], 403);
+    }
+    
+    wp_send_json([
+        'nonce' => wp_create_nonce('wp_rest'),
+    ], 200);
 });

@@ -27,6 +27,10 @@ Template: astra
   order: 2;
 }
 /* section canettes*/
+
+.container-canette{
+  border-radius: 25% 25% 47% 53% / 0% 0% 9% 9% !important;
+}
 .titre-bloc-canette{
   width: 65%;
 }
@@ -62,6 +66,10 @@ Template: astra
 
 /* PAGE NOUS CONTACTER*/
 /* bloc nous rencontrer*/
+
+.container-rencontrer{
+  border-radius: 25% 25% 47% 53% / 0% 0% 14% 14% !important;
+}
 .image-bloc-rencontrer{
   width: 70% !important;
 }
@@ -140,7 +148,7 @@ Template: astra
 }
 .imput-champs .bouton-champs-qte {
   width: 30%;
-  border-radius: 10px 0 0 10px;
+  border-radius: 8px 0 0 8px;
   height: 56px;
   padding: 10px 20px;
 }
